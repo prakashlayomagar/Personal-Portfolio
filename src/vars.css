@@ -8,5 +8,9 @@
 
     /*fonts*/
     --font-roboto: "Roboto";
- 
+    
+    /* Responsive Spacing */
+    --mobile-margin: 5%;
+    --tablet-margin: 8%;
+    --desktop-margin: 10%;
 }

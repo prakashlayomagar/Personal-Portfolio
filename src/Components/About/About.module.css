@@ -4,66 +4,85 @@
   position: relative;
   background-color: rgba(12, 12, 12, 0.6);
   border-radius: 15px;
-  padding: 73px;
-  margin-top: 129px;
+  padding: 2rem;
+  margin-top: 4rem;
+  padding-left: var(--mobile-margin);
+  padding-right: var(--mobile-margin);
   z-index: 1;
-  margin-left: 10%;
-  margin-right: 10%;
 }
 
 .title {
   color: var(--color-text);
-  font-size: 35px;
+  font-size: clamp(1.5rem, 6vw, 2.1875rem);
   font-weight: 700;
   letter-spacing: 1.75px;
   text-transform: uppercase;
+  margin-bottom: 2rem;
 }
 
 .content {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   position: relative;
-  
+  gap: 2rem;
 }
 
 .aboutImage {
-  width: 30%;
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
   transition: transform 0.5s ease;
-  margin-left: 40px;
-}
-.aboutImage:hover{
-  transform:scale(1.1);
+  object-fit: cover;
 }
 
-.introduction{
-    color: var(--color-text);
-    font-size: 25px;
-    align-items: center;
-    margin-left: 30px;
-
+.aboutImage:hover {
+  transform: scale(1.05);
 }
-@media screen and (max-width: 830px) {
-    .container {
-      background-color: transparent;
-      padding-left: 0;
-      padding-right: 0;
-    }
-  
-    .content {
-      flex-direction: column;
-    }
-  
-    .aboutImage {
-      display: none;
-    }
-  
-    .aboutItems {
-      margin-top: 29px;
-    }
-  
-    .aboutItem {
-      padding-left: 0;
-      padding-right: 0;
-    }
+
+.introduction {
+  color: var(--color-text);
+  font-size: clamp(1rem, 4vw, 1.5625rem);
+  line-height: 1.6;
+}
+
+.aboutItems {
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.aboutItem {
+  padding: 1rem 0;
+}
+
+/* Tablet (768px and up) */
+@media screen and (min-width: 769px) {
+  .container {
+    padding: 3rem;
+    padding-left: var(--tablet-margin);
+    padding-right: var(--tablet-margin);
   }
+
+  .content {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .aboutImage {
+    width: 30%;
+    flex-shrink: 0;
+  }
+
+  .introduction {
+    margin-left: 2rem;
+    flex: 1;
+  }
+}
+
+/* Desktop (1024px and up) */
+@media screen and (min-width: 1024px) {
+  .container {
+    padding-left: var(--desktop-margin);
+    padding-right: var(--desktop-margin);
+  }
+}

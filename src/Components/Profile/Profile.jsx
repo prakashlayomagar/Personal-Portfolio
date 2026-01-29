@@ -10,7 +10,7 @@ export const Profile = () => {
           <p className={styles.description}>
             I'm a <b className={styles.softwareEngineer}>Software Engineer </b>and I build things for web. 
           </p>
-          <a href="https://www.linkedin.com/in/prakash-layo-magar-16603a166/" className={styles.contactBtn}>
+          <a href="https://www.linkedin.com/in/prakash-layo-magar-fullstackjavadev/" className={styles.contactBtn}>
             Linkedin 
           </a> 
 

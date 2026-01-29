@@ -20,7 +20,6 @@ export const Education = () => {
                 > Univeristy of New Haven </a>  </h3>
               <p>
                 <h4> West Haven , Connecticut , USA</h4>
-                <h5> Sept 2022 - May 2024</h5>
                 Masters in Science in Computer Science
               </p>
             </div>
@@ -34,8 +33,6 @@ export const Education = () => {
                   rel="KDU official Website">  Kyungdong Univeristy </a></h3>
               <p>
                 <h4> Gangwondo, South-Korea</h4> 
-                <h5> 2017 - 2021</h5>
-
                Bachelor in Computer Engineering 
               </p>
             </div>
@@ -49,7 +46,6 @@ export const Education = () => {
                   rel="HIMS fb page"> Himalaya International Model Secondary School (HIMS)</a></h3>
               <p>
                <h4>Jorpati, Kathmandu , Nepal </h4>  
-                <h5>2015 to 2016   </h5> 
                Higher Secondary Eduaction in Science Stream. 
               </p>
             </div>

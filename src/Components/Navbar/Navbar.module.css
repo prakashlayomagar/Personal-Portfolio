@@ -5,78 +5,108 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 61px;
+  padding-top: 1.5rem;
+  padding-left: var(--mobile-margin);
+  padding-right: var(--mobile-margin);
   z-index: 2;
-  margin: 0 10%;
 }
 
 .title {
-  font-size: 30px;
+  font-size: clamp(1.25rem, 5vw, 2rem);
   font-weight: 600;
   text-decoration: none;
   color: var(--color-text);
+  white-space: nowrap;
 }
 
-
 .menuBtn {
-  display: none;
+  display: block;
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
 }
 
 .menu {
   display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .menuItems {
-  display: flex;
-  gap: 47px;
+  display: none;
+  flex-direction: column;
+  gap: 0.8rem;
   list-style: none;
+  border-radius: 10px;
+  background: rgb(25, 55, 109);
+  background: linear-gradient(
+    0deg,
+    rgba(25, 55, 109, 0.2) 0,
+    rgba(25, 55, 109, 1) 100%
+  );
+  padding: 1.5rem 2rem;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+  position: absolute;
+  top: 100%;
+  right: var(--mobile-margin);
+  margin-top: 0.5rem;
+  min-width: 150px;
 }
 
 .menuItems a {
-  font-size: 25px;
   color: var(--color-text);
   text-decoration: none;
+  font-size: clamp(0.9rem, 3vw, 1.25rem);
+  transition: color 0.3s ease;
 }
 
-@media screen and (max-width: 830px) {
+.menuItems a:hover {
+  color: var(--color-primary);
+}
+
+.menuOpen {
+  display: flex;
+}
+
+/* Tablet (768px and up) */
+@media screen and (min-width: 769px) {
   .navbar {
-    flex-direction: column;
-    align-items: flex-start;
+    padding-left: var(--tablet-margin);
+    padding-right: var(--tablet-margin);
   }
-
-  .menu {
-    position: absolute;
-    right: 0;
-    margin-right: 10%;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 11px;
-    z-index: 3;
-  }
-
+  
   .menuBtn {
-    display: block;
-    cursor: pointer;
-  }
-
-  .menuItems {
     display: none;
-    flex-direction: column;
-    align-items: center;
-    gap: 13px;
-    border-radius: 10px;
-    background: rgb(25, 55, 109);
-    background: linear-gradient(
-      0deg,
-      rgba(25, 55, 109, 0.2) 0
-      rgba(25, 55, 109, 1) 100%
-    );
-    padding: 24px 33px;
-    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
   }
-
-  .menuOpen {
+  
+  .menu {
+    width: 100%;
+  }
+  
+  .menuItems {
     display: flex;
-    z-index: 1;
+    position: static;
+    flex-direction: row;
+    gap: 2rem;
+    background: none;
+    padding: 0;
+    box-shadow: none;
+    margin-top: 0;
+  }
+}
+
+/* Desktop (1024px and up) */
+@media screen and (min-width: 1024px) {
+  .navbar {
+    padding-left: var(--desktop-margin);
+    padding-right: var(--desktop-margin);
+  }
+  
+  .menuItems {
+    gap: 3rem;
+  }
+  
+  .menuItems a {
+    font-size: 1.25rem;
   }
 }

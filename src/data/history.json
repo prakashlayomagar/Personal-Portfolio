@@ -1,37 +1,41 @@
 [
   {
-    "role": "IT Specialist",
-    "organisation": "Nepal Darshan Church",
-    "startDate": "Oct, 2022",
+    "role": "Full Stack Java Developer",
+    "organisation": "Mastercard, Arlington, VA",
+    "startDate": "Nov 2023",
     "endDate": "Present",
     "experiences": [
-      "Manage databases, ensuring accuracy and compliance, while also maintaining IT infrastructure, including networks, servers, and systems of church which improveed performance by 30%.",
-      "Drive online ministry initiatives, including live streaming, virtual events, and social media outreach, managing accounts, creating content, and engaging with communities.",
-      "Oversee the church website, ensuring it's current, user-friendly, and informative on services, events, and ministries."
+      "Developed cloud-native REST-based microservices using Spring Boot adhering to microservices architecture best practices",
+      "Implemented Spring Security for authentication, authorization, and access control features with Spring MVC Framework",
+      "Developed responsive UI using HTML5, CSS3, JavaScript, Angular Framework, and React with component-based paradigm",
+      "Implemented message producers and consumers for Kafka topics and streaming applications using Kafka Streams API",
+      "Configured AWS infrastructure including EC2 instances, VPCs, security groups, and designed secure Virtual Private Cloud"
     ]
   },
   {
-    "role": "Software Engineer",
-    "organisation": "Shumsher IT Services Pvt. Ltd",
-    "startDate": "Aug, 2021",
-    "endDate": "Aug, 2022",
+    "role": "Software Developer (Full Stack Java)",
+    "organisation": "T-Mobile, Remote",
+    "startDate": "Aug 2021",
+    "endDate": "Aug 2023",
     "experiences": [
-      "Developed scalable Java-based applications using Spring framework and Spring Boot, ensuring efficient backend operations for our client’s business in US & Canada.",
-      "Optimized data persistence with Hibernate ORM, achieving a 30% reduction in query execution time through various techniques.",
-      "Played a crucial role in implementing RESTful web services with Java SE11 API, contributing to microservices architecture for enhanced scalability, and collaborated on use case preparation and UML-based design to ensure alignment with project objectives."
+      "Designed and implemented RESTful APIs using Spring MVC and Spring Data JPA for efficient data access and persistence",
+      "Developed batch processing workflows using Spring Batch for efficient processing of large data volumes",
+      "Implemented Spring AOP for cross-cutting concerns including logging, caching, and transaction management",
+      "Designed single-page responsive web applications using Angular 12, TypeScript, HTML5, CSS3, and Bootstrap",
+      "Developed Docker files and Docker Compose configurations for containerized environments with Kubernetes orchestration"
     ]
   },
   {
-    "role": "Full Stack Java Developer",
-    "organisation": "Tech Temple Pvt. Ltd",
-    "startDate": "Jan, 2018",
-    "endDate": "June, 2021",
+    "role": "Java Backend Developer",
+    "organisation": "Capital One, Tysons Corner, VA",
+    "startDate": "May 2019",
+    "endDate": "Jun 2021",
     "experiences": [
-      "Spearheaded the development of full-stack solutions, prioritizing performance, scalability, and user experience, including crafting backend services with Java and Spring Boot and creating RESTful APIs while ensuring frontend-backend communication alignment.",
-      "Developed responsive web interfaces using HTML5, CSS3, and JavaScript frameworks like Angular or React, integrating modern frontend tools for efficient asset development, and seamlessly integrating third-party APIs.",
-      "Led collaborative efforts with UI/UX designers and stakeholders, conducted code reviews, mentored junior developers, and implemented automated tests for both backend and frontend components, contributing to continuous improvement in Agile environments.",
-      "Proven track record in developing responsive cross-platform mobile apps (React Native, Flutter, Kotlin) for diverse sectors (restaurant, medical, e-commerce), fostering customer engagement and loyalty, driving substantial business growth by more than 50%.",
-      "Demonstrated expertise in web design, contributing to government and international projects, utilizing websites as potent brand showcases and audience engagement platforms, leading to a remarkable 40% business expansion."
+      "Designed and implemented applications using Spring MVC, Spring IOC, Spring Batch, Spring AOP, Hibernate, and WebLogic",
+      "Created and optimized responsive web interfaces using HTML, CSS, and implemented REST API interactions with AJAX and JSON",
+      "Worked with Neo4j graphic database, Node.js backend, React.js frontend with Redux and D3 for visualization",
+      "Designed REST-based microservices using Spring Boot, Spring Data with JPA, and utilized Swagger for API documentation",
+      "Implemented Spring Cloud components including configuration, service discovery, Hystrix, and Gateway patterns"
     ]
   }
 ]
