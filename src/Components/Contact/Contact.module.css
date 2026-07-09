@@ -1,5 +1,14 @@
 @import "../../vars.css";
 
+.honeypot {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+  left: -9999px;
+}
+
 .container {
   color: var(--color-text);
   margin-top: 4rem;
