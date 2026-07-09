@@ -1,10 +1,14 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import styles from "./Contact.module.css";
 import { getImageUrl } from "../../utils";
 
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+
 // Initialize EmailJS with your public key
-emailjs.init("bcXIQY5GO6RuvtKo2");
+emailjs.init(EMAILJS_PUBLIC_KEY);
 
 export const Contact = () => {
   const formRef = useRef();
@@ -13,7 +17,9 @@ export const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    message: ""
+    message: "",
+    // Honeypot: real users never fill this in; bots that autofill every field will
+    company: ""
   });
 
   const handleChange = (e) => {
@@ -26,7 +32,15 @@ export const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
+    if (formData.company) {
+      // Silently drop likely bot submissions without revealing the honeypot.
+      setSubmitMessage("Message sent successfully!");
+      setFormData({ name: "", email: "", message: "", company: "" });
+      setTimeout(() => setSubmitMessage(""), 3000);
+      return;
+    }
+
     if (!formData.name || !formData.email || !formData.message) {
       setSubmitMessage("Please fill in all fields");
       return;
@@ -37,8 +51,8 @@ export const Contact = () => {
 
     try {
       await emailjs.send(
-        "service_kd07ded",
-        "template_xgj48y6",
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
         {
           from_name: formData.name,
           from_email: formData.email,
@@ -48,7 +62,7 @@ export const Contact = () => {
       );
 
       setSubmitMessage("Message sent successfully!");
-      setFormData({ name: "", email: "", message: "" });
+      setFormData({ name: "", email: "", message: "", company: "" });
       setTimeout(() => setSubmitMessage(""), 3000);
     } catch (error) {
       setSubmitMessage("Failed to send message. Please try again.");
@@ -67,6 +81,17 @@ export const Contact = () => {
 
       <div className={styles.formContainer}>
         <form ref={formRef} onSubmit={handleSubmit} className={styles.contactForm}>
+          <input
+            type="text"
+            name="company"
+            value={formData.company}
+            onChange={handleChange}
+            tabIndex="-1"
+            autoComplete="off"
+            aria-hidden="true"
+            className={styles.honeypot}
+          />
+
           <div className={styles.formGroup}>
             <input
               type="text"
@@ -117,19 +142,33 @@ export const Contact = () => {
 
       <ul className={styles.links}>
         <li className={styles.link}>
-          <img src={getImageUrl("contact/emailIcon.png")} alt="Email icon" />
+          <img src={getImageUrl("contact/emailIcon.png")} alt="Email icon" loading="lazy" />
           <a href="mailto:prakashlayomagar1996@gmail.com">prakashlayomagar1996@gmail.com</a>
         </li>
         <li className={styles.link}>
           <img
             src={getImageUrl("contact/linkedinIcon.png")}
             alt="LinkedIn icon"
+            loading="lazy"
           />
-          <a href="https://www.linkedin.com/in/prakash-layo-magar-fullstackjavadev/" className={styles.contactBtn}>linkedin.com/prakashlayomagar</a>
+          <a
+            href="https://www.linkedin.com/in/prakash-layo-magar-fullstackjavadev/"
+            className={styles.contactBtn}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            linkedin.com/prakashlayomagar
+          </a>
         </li>
         <li className={styles.link}>
-          <img src={getImageUrl("contact/githubIcon.png")} alt="Github icon" />
-          <a href="https://github.com/prakashlayomagar">github.com/prakashlayomagar</a>
+          <img src={getImageUrl("contact/githubIcon.png")} alt="Github icon" loading="lazy" />
+          <a
+            href="https://github.com/prakashlayomagar"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            github.com/prakashlayomagar
+          </a>
         </li>
       </ul>
     </footer>

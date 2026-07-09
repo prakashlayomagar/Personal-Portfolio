@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 import styles from "./Navbar.module.css";
 import { getImageUrl } from "../../utils";
@@ -12,17 +12,25 @@ export const Navbar = () => {
         PM
       </a>
       <div className={styles.menu}>
-        <img
+        <button
+          type="button"
           className={styles.menuBtn}
-          src={
-            menuOpen
-              ? getImageUrl("nav/closeIcon.png")
-              : getImageUrl("nav/menuIcon.png")
-          }
-          alt="menu-button"
+          aria-expanded={menuOpen}
+          aria-controls="primary-navigation"
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
           onClick={() => setMenuOpen(!menuOpen)}
-        />
+        >
+          <img
+            src={
+              menuOpen
+                ? getImageUrl("nav/closeIcon.png")
+                : getImageUrl("nav/menuIcon.png")
+            }
+            alt=""
+          />
+        </button>
         <ul
+          id="primary-navigation"
           className={`${styles.menuItems} ${menuOpen && styles.menuOpen}`}
           onClick={() => setMenuOpen(false)}
         >

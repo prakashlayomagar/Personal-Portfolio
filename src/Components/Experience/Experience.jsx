@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import styles from "./Experience.module.css";
 import history from "../../data/history.json";
-import { getImageUrl } from "../../utils";
 
 export const Experience = () => {
   const [selectedExperience, setSelectedExperience] = useState(0);
